@@ -126,7 +126,7 @@ variable.
 
 ```powershell
 npm run check                # node --check on all three entry files
-npm test                     # node --test test/   (Linux/macOS/CI)
+npm test                     # node --test test/engines.test.mjs
 node test/engines.test.mjs   # single-process fallback
 ```
 

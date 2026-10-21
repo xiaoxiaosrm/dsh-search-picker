@@ -31,7 +31,7 @@ jobs:
           node --check lib/client.js
 
       - name: Unit tests
-        run: node --test test/
+        run: node --test test/engines.test.mjs
 
       - name: Packaging check
         run: npm pack --dry-run

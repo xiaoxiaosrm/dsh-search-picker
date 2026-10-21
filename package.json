@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "check": "node --check lib/index.js && node --check lib/engines.js && node --check lib/client.js",
-    "test": "node --test test/",
+    "test": "node --test test/engines.test.mjs",
     "test:node": "node test/engines.test.mjs"
   },
   "dsh": {

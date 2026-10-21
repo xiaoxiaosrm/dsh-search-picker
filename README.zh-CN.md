@@ -89,7 +89,7 @@
 
 ```powershell
 npm run check                # 三个入口文件的 node --check
-npm test                     # node --test test/   （Linux/macOS/CI）
+npm test                     # node --test test/engines.test.mjs
 node test/engines.test.mjs   # 单进程兜底
 ```
 
