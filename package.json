@@ -1,0 +1,68 @@
+{
+  "name": "dsh-search-picker",
+  "version": "0.1.0",
+  "description": "Sidebar search-provider picker for DeepSeek Harness: switch ctx.web between DeepSeek Messages, DeepSeek Search API, OpenCode Go, Tavily and Exa from the desktop sidebar.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/engines.js && node --check lib/client.js",
+    "test": "node --test test/",
+    "test:node": "node test/engines.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.2": "compatible"
+      }
+    }
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "deepseek",
+    "web-search",
+    "search-provider",
+    "tavily",
+    "exa",
+    "opencode"
+  ],
+  "author": "xiaoxiaosrm",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoxiaosrm/dsh-search-picker.git"
+  },
+  "homepage": "https://github.com/xiaoxiaosrm/dsh-search-picker#readme",
+  "bugs": {
+    "url": "https://github.com/xiaoxiaosrm/dsh-search-picker/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

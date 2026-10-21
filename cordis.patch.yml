@@ -1,0 +1,26 @@
+# Bundle patch layer for the profile that installs this package.
+#
+# The host half is a plain Cordis plugin: it registers the custom search
+# providers (opencode-go / tavily / exa) into the `web` seam. The browser half
+# is loaded by the web app through the `dsh.client` manifest in package.json
+# and only renders the sidebar picker.
+#
+# The `deepseek-official` (Messages) and `deepseek-search-api` (Search API)
+# providers are served by the built-in packages; this plugin never registers
+# them and never takes `web.searchProvider` over. The picker writes the same
+# `web.searchProvider` field the official Plugins > Web search page edits.
+- insert:
+    - id: search-picker
+      name: dsh-search-picker
+      config:
+        opencodeGo:
+          baseURL: https://opencode.ai/inference/go/anthropic/v1
+          model: deepseek-v4.1-flash
+          maxTokens: 4096
+          maxUses: 5
+        tavily:
+          baseURL: https://api.tavily.com
+          apiKeyEnv: TAVILY_API_KEY
+        exa:
+          baseURL: https://api.exa.ai
+          apiKeyEnv: EXA_API_KEY
