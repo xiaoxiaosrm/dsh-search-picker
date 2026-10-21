@@ -36,6 +36,8 @@ falling back to another engine.
 
 ## UI
 
+![dsh-search-picker menu in the DSH desktop sidebar](docs/ui.png)
+
 The button sits at the bottom of the sidebar, right above the Settings row. The
 menu is a `position: fixed` popover: its width follows the sidebar content width
 (sidebar defaults to 280 px, draggable 264–420 px → menu 240–396 px) and updates

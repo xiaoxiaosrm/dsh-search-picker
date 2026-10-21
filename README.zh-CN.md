@@ -27,6 +27,8 @@
 
 ## 界面
 
+![dsh-search-picker 菜单](docs/ui.png)
+
 按钮固定在侧边栏底部、Settings 行上方。菜单是 `position: fixed` 浮层：宽度跟随侧边栏内容宽度（侧边栏默认 280px、可拖拽 264–420px，对应菜单 240–396px），拖动侧边栏时实时变化，因此不会被侧边栏列的 `overflow: hidden` 裁掉；侧边栏折叠成 56px 图标轨时，菜单以 280px 向右浮出。
 
 菜单背景是不透明的：浅色主题纯白、深色主题深灰（`--dsw-alias-bg-layer-1`，随主题自动切换），并配官方浮层描边与柔和投影（`--dsw-elevation-panel`，0.5px 描边 + 双层阴影）。官方菜单那套 `--dsw-specific-menu` + `backdrop-filter` 毛玻璃刻意没有沿用——它只有 58% 不透明、必须靠 blur 才成型，缺了模糊就会透出侧边栏文字。
